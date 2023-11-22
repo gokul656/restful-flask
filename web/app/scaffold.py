@@ -22,10 +22,6 @@ def create_app() -> Flask:
 
     with __app.app_context():
         db.init_app(__app)
-
-        from web.app.models.user import User
-
         db.create_all()
-        db.session.commit()
 
     return __app
